@@ -16,6 +16,6 @@ Then open `http://localhost:4000`.
 ## Customize
 
 Start with `_config.yml` for site-wide settings, then edit content in `_pages/`,
-`_portfolio/`, `_publications/`, `_talks/`, and `_teaching/`.
+`_portfolio/`, and `_research/`.
 
 Template source: https://github.com/academicpages/academicpages.github.io
