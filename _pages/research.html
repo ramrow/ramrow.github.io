@@ -2,7 +2,12 @@
 layout: archive
 title: "Research"
 permalink: /research/
-author_profile: true
+author_profile: false
+sidebar:
+  - title: "Contents"
+    text: |
+      - [Journal Articles](#journal-articles)
+      - [Conference Papers](#conference-papers)
 ---
 
 {% if site.author.googlescholar %}
@@ -20,7 +25,7 @@ author_profile: true
         {% continue %}
       {% endif %}
       {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
+        <h2 id="{{ category[1].title | slugify }}">{{ category[1].title }}</h2><hr />
         {% assign title_shown = true %}
       {% endunless %}
       {% include archive-single.html %}

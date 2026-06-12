@@ -2,7 +2,15 @@
 layout: archive
 title: "CV"
 permalink: /cv/
-author_profile: true
+author_profile: false
+sidebar:
+  - title: "Contents"
+    text: |
+      - [Education](#education)
+      - [Work experience](#work-experience)
+      - [Skills](#skills)
+      - [Research](#research)
+      - [Service and leadership](#service-and-leadership)
 redirect_from:
   - /resume
 ---
