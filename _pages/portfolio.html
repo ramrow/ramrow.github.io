@@ -18,7 +18,38 @@ sidebar:
 <p>The team decided that for the three labs done throughout this course, The first and third will be omega lab and the second will be an alpha lab due to the estimated difficulty of our designe project</p>
 <p>Co-authors: Cooper Filkins, Chloe Zhou</p>
 <h3 id="alpha-lab">Alpha Lab</h3>
-<p>This lab report details the comprehensive analysis of transient step responses in first-order RC and second-order RLC circuits. It covers the full engineering workflow, from deriving theoretical time constants to simulating the circuits in LTspice. These theoretical and simulated models were then verified through physical hardware implementation, using an ADALM1000 oscilloscope to measure and compare the real-world behavior of overdamped, underdamped, and critically damped systems, alongside an exploration of an RC phase shift oscillator.</p>
+
+<h3>Document Overview</h3>
+    <p>The document is a comprehensive laboratory report detailing experiments and mathematical analyses of fundamental electrical networks, specifically focusing on RC (Resistor-Capacitor) and RLC (Resistor-Inductor-Capacitor) circuits[cite: 1]. The primary objective of the document is to validate theoretical circuit behaviors by triangulating data from three sources: hand-written analytical equations, LTspice software simulations, and physical hardware measurements captured using an ADALM1000 Oscilloscope[cite: 1].</p>
+<hr>
+
+<h3>Part A &amp; B: RC Circuits and Time Constants</h3>
+<p>In the first two sections (Part A and Part B), the report successfully demonstrates the principles of RC time constants (<em>&tau; = RC</em>)[cite: 1].</p>
+<ul>
+  <li>The author proves that changing the resistor and capacitor values directly alters the time it takes for the capacitor's voltage to reach 63.2% of its final value during a step input[cite: 1].</li>
+  <li>The document compares the theoretical time constants to the measured oscilloscope data, achieving results well within acceptable error margins (e.g., 5.6% and 3.37%)[cite: 1].</li>
+  <li>Furthermore, the author successfully utilizes Thevenin's theorem to simplify a multi-resistor network into an equivalent circuit, mathematically predicting and physically verifying that the capacitor's steady-state voltage approaches 1/3 V[cite: 1].</li>
+</ul>
+
+<img src="{{ base_path}}/files/spring-2024-electric-circuits/circuit_alpha.png">
+
+<hr>
+<h3>Part C: RLC Circuit Dynamics</h3>
+  <p>The most extensive accomplishment of the report (Part C) is its deep exploration of a series RLC circuit[cite: 1].</p>
+  <ul>
+    <li>The author successfully proves how manipulating a single resistance value shifts the system's dynamic response between overdamped, critically damped, and underdamped states[cite: 1].</li>
+    <li>Through rigorous time-domain calculations and s-domain (Laplace transform) analysis, the author derives the attenuation constant (<em>&alpha;</em>) and resonant frequency (<em>&omega;<sub>0</sub></em>) to establish the required resistance thresholds for each damping condition[cite: 1].</li>
+    <li>The report pairs these complex mathematical models with accurate LTspice simulations and physical oscilloscope traces, successfully validating the predicted oscillatory and exponential decay behaviors of both the capacitor's voltage and the inductor's current[cite: 1].</li>
+  </ul>
+
+<hr>
+<h3>Part D: Timing and Oscillator Configurations</h3>
+  <p>Finally, the document concludes (Part D) by comparing different timing and oscillator configurations, including the basic RC Timer, the 555 Timer IC, and the RC Phase Shift Oscillator[cite: 1].</p>
+  <ul>
+    <li>The author successfully simulates an RC Phase Shift Oscillator, proving its ability to reach a steady state and generate a continuous sinusoidal output frequency of approximately 31.5 kHz[cite: 1].</li>
+    <li>The report highlights the practical engineering applications of such an oscillator, noting its utility in audio synthesizers, testing circuits, and GPS modules due to its reliable frequency generation[cite: 1].</li>
+  </ul>
+
 <ul>
   <li><a href="{{ base_path }}/files/spring-2024-electric-circuits/alpha_lab_2_Proof_of_Concepts.pdf">Alpha Lab 2 Proof of Concepts</a></li>
 </ul>
@@ -37,7 +68,7 @@ sidebar:
 
 <h2 id="fall-2024-intro-to-engineering-design">Fall 2024 Intro to Engineering Design</h2>
 <h3 id="mini-project-line-follower">Mini Project: Line Follower</h3>
-<p>Co-authors: Merac Dec, Curtis Sung</p>
+<p>Co-authors: Merak Dec, Curtis Sung</p>
 <p>The Line Follower mini project focused on designing, building, and testing an autonomous vehicle capable of detecting and following a path. The project combined mechanical design, sensor integration, circuit implementation, and iterative testing to tune the robot's response to line position changes. The final system used feedback from line-detection sensors to guide motor control decisions, demonstrating a complete engineering design cycle from requirements and prototyping through performance evaluation.</p>
 <ul>
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/IED-PD1_Mini-Project_Final_Technical_Memo.pdf">Mini Project Final Technical Memo</a></li>
