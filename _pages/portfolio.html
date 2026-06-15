@@ -8,6 +8,7 @@ sidebar:
     text: |
       - [Spring 2024 Electric Circuits](#spring-2024-electric-circuits)
       - [Fall 2024 Intro to Engineering Design](#fall-2024-intro-to-engineering-design)
+      - [Fall 2025 Multidisciplinary Capstone: Aircraft Robotic Assembly](#fall-2025-multidisciplinary-capstone-aircraft-robotic-assembly)
 ---
 
 {% include base_path %}
@@ -132,7 +133,6 @@ sidebar:
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/IED-PD1_Mini-Project_Final_Technical_Memo.pdf">Mini Project Final Technical Memo</a></li>
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/Line_Follower_05_Dec_Sung_Xu.pdf">Mini Project Presentation</a></li>
 </ul>
-
 <h3 id="large-project-assisted-wheelchair-transfer-system">Large Project: Assisted Wheelchair Transfer System</h3>
 <p>Co-authors: Ben Driscoll, David Rowe, Matt Hoover, Miles Lafferty</p>
 <hr>
@@ -152,3 +152,48 @@ sidebar:
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/professional_and_societal_impacts.pdf">Professional and Societal Impacts</a></li>
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/FINAL_REPORT.docx.pdf">Final Report</a></li>
 </ul>
+
+<h2 id="fall-2025-multidisciplinary-capstone-aircraft-robotic-assembly">Fall 2025 Multidisciplinary Capstone: Aircraft Robotic Assembly</h2>
+<p>Project client: Boeing</p>
+<p>Co-authors: Darwin Capani, Talon Carsto, Anderson Corriero, Jeremia Silaban, Jay Tang, Brody Waters</p>
+<p>The Aircraft Robotic Assembly capstone focused on improving a robotic assistant for aircraft cable bundle transport and installation. The long-term goal is to reduce the physical strain placed on technicians during cable routing while keeping the robot safe, interpretable, and reliable in a simulated aircraft manufacturing environment.</p>
+<img src="{{ base_path}}/images/capstone-aircraft-robotic-assembly.jpg">
+<hr>
+<h3>System Goals and Client Needs</h3>
+<p>Building on earlier teams' ROS 2 foundation, our Fall 2025 team refined autonomous behavior, operator feedback, cable handling, and safety. The system was designed to support both tele-operation and autonomous operation, with the robot eventually navigating to a cable, picking it up, and positioning it for technician installation.</p>
+<ul>
+  <li>Improve autonomous navigation and cable detection for a more realistic Boeing-style assembly workflow.</li>
+  <li>Upgrade the robot's computing platform while staying within power and compatibility constraints.</li>
+  <li>Provide clearer robot-state feedback so operators and developers can quickly understand system behavior.</li>
+  <li>Improve cable gripping reliability across multiple cable diameters.</li>
+  <li>Add safety features that address emergency shutdown and LiDAR blind spots.</li>
+</ul>
+<hr>
+<h3>Software, Perception, and Autonomy</h3>
+<p>A major software contribution was the cable detection and localization pipeline. The system integrates an Intel RealSense RGB-D camera with ROS 2, detects cable pixels in the RGB image, samples aligned depth at those pixels, and converts the result into camera-frame XYZ coordinates. The node publishes an overlay image and 3D point data so downstream autonomy modules can use cable location information without tightly coupling to the perception code.</p>
+<p>The team also worked on autonomous navigation improvements for ramp handling and drift correction. A compass-based orientation approach was selected to help detect heading deviations and create a path toward more reliable traversal of inclined surfaces.</p>
+<hr>
+<h3>Hardware and Human-Robot Interaction</h3>
+<p>The robot's computation hardware was upgraded from a Raspberry Pi 4 to a Raspberry Pi 5 to provide stronger processing capability while remaining compatible with the robot's existing software stack. We also added a visual feedback subsystem using addressable LEDs to communicate operating states such as autonomous mode, tele-operation, emergency stop, and debugging conditions.</p>
+<p>The gripper was redesigned around a fractal-vise-inspired geometry to increase contact area and improve cable retention. Through iterative 3D-printed versions, the gripper became more reliable across cables with outer diameters from 0.5 to 2.5 inches.</p>
+<hr>
+<h3>Safety Features and Outcome</h3>
+<p>Safety work included a normally closed emergency stop and ultrasonic sensors positioned to cover areas not visible to the LiDAR. These components were validated independently, creating a stronger base for future integration with the Raspberry Pi and the visual feedback system.</p>
+<p>By the end of the semester, the project advanced the Boeing-sponsored robot in perception, safety, feedback, computation, and manipulation. The final design report documents the subsystem decisions, testing strategy, limitations, and next steps for future capstone teams to complete full system integration.</p>
+<hr>
+<img src="{{ base_path}}/images/capstone_flowchart.png">
+<h3>Our Engineering Process</h3>
+<p>Our engineering process was deeply rooted in structured concept development and iterative evaluation. We began by defining high-priority customer needs—such as reliable cable gripping, accurate obstacle avoidance, and clear visual feedback—and translated them into measurable technical requirements. To make informed design decisions, we utilized concept selection matrices to weigh various alternatives against criteria like cost, ease of implementation, and performance. For instance, when upgrading our main processor, we evaluated a Jetson Nano and a Raspberry Pi cluster before ultimately selecting the Raspberry Pi 5 for its optimal balance of compute power and software compatibility.</p>
+<p>To efficiently tackle these challenges, we divided our development into several core sub-assemblies:</p>
+<ul>
+  <li>System & Navigation Upgrades: Jay upgraded the robot's "brain" to a Raspberry Pi 5, utilizing Docker to maintain compatibility with our ROS2 Humble architecture. For navigation, I implemented an A* reactive pathfinding algorithm utilizing LiDAR data to autonomously avoid obstacles. Talon also addressed the robot's tendency to drift on inclines by integrating a CMPS12 electronic compass to provide real-time corrective heading data.</li>
+  <li>Cable Detection & Manipulation: Darwin engineered a real-time cable detection pipeline using an Intel RealSense RGB-D camera. This system drew a green visual overlay over detected cables and computed their precise 3D (XYZ) coordinates for downstream path planning. To securely handle the cables, Jeremia completely redesigned the end-effector, 3D printing a fractal-vise-inspired gripper out of PLA that conformed to cables ranging from 0.5 to 2.5 inches in diameter.</li>
+  <li>Safety & Visual Feedback: Brody wrapped the robot's base in a WS2812 LED strip to provide immediate, color-coded visual feedback regarding the robot's operational state (e.g., autonomous mode, tele-op, or e-stop). For safety, Anderson installed a hardware-level Emergency Stop button that immediately cut power to the wheel motors, supplemented by HC-SR04 ultrasonic sensors to detect obstacles within the LiDAR's 6-inch blind spot.</li>
+</ul>
+<hr>
+<h3>Project Management</h3>
+<p>We managed our project timeline through a rigorous, multi-layered testing strategy that emphasized modular development. Rather than waiting for full system integration, we evaluated each subsystem independently to ensure we stayed on schedule. For example, our visual feedback system was validated using standalone 6-bit string terminal inputs, and our safety sensors were tested on a separate movable cart. Similarly, the cable detection software progressed through offline functionality checks, node-level testing using recorded data playback, and finally, hardware-in-the-loop physical validation. This phased approach allowed us to isolate bugs early, adapt to hardware delays, and successfully deliver a more robust, deployable robotic assistant by the end of the semester.</p>
+<ul>
+  <li><a href="{{ base_path }}/files/fall-2025-multidisciplinary-capstone-aircraft-robotic-assembly/Capstone_Final_Design_Report.pdf">Capstone Final Design Report</a></li>
+</ul>
+
