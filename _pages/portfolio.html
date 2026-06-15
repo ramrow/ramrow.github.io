@@ -132,3 +132,23 @@ sidebar:
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/IED-PD1_Mini-Project_Final_Technical_Memo.pdf">Mini Project Final Technical Memo</a></li>
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/Line_Follower_05_Dec_Sung_Xu.pdf">Mini Project Presentation</a></li>
 </ul>
+
+<h3 id="large-project-assisted-wheelchair-transfer-system">Large Project: Assisted Wheelchair Transfer System</h3>
+<p>Co-authors: Ben Driscoll, David Rowe, Matt Hoover, Miles Lafferty</p>
+<hr>
+<p>Our team, Iron Volt Mobility, set out to design an assisted wheelchair transfer system for a kindergarten-aged student with an ataxic gait pattern. The goal was to foster greater independence by enabling him to transition seamlessly from a seated position in his wheelchair to a standing position in his Crocodile Gait Trainer without relying on a teacher or assistant. We prioritized safety, reliability, and the utilization of his existing upper body strength to create an accessible environment that would allow him to confidently join a standard class pathway.</p>
+<hr>
+<img src="{{ base_path}}/images/team.png">
+<p>During our system concept development, we brainstormed and evaluated several alternatives, including a scissor lift mechanism, ratchet rails, and a drop-seat design. Ultimately, we moved forward with a modular folding table design combined with an automatic braking system, as it provided the best balance of robust support, simplicity, and cost-effectiveness. To efficiently execute the project, we divided the design into five key sub-assemblies: the push platform, the walker-to-wheelchair attachment, the dual-axis torque hinge, the brake clamp, and the brake control.</p>
+<hr>
+<p>I personally led the engineering for the Brake Control subsystem, which was crucial for ensuring neither the wheelchair nor the walker moved while the user was standing. I designed an electric braking circuit utilizing an Arduino microprocessor, an L298N DC motor driver, a 15-volt battery, and two 12-volt motors. I wrote the Arduino code to activate the motors via a push button mounted on the armrest, and integrated a red LED to visually signal to the user when the brakes were safely engaged. While our prototype successfully met the performance specification of engaging the brakes in under 5 seconds—averaging 3.9 seconds—we discovered during integration testing that the 12-volt motors only produced 6 Kg/cm of torque, which was insufficient to fully lock the wheels against significant force without upgrading to servo or strong stepper motors.</p>
+<hr>
+<p>To manage our engineering process and timing, we utilized a comprehensive Gantt chart to track task completion across our three major milestones: concept introduction, prototyping/demos, and final presentations. We established our team hierarchy early on and maintained open communication using platforms like Cisco WebEx Teams and iMessage. Although we faced challenges like procrastination and the late integration of our individual subsystems, we successfully navigated these hurdles to deliver a cohesive proof-of-concept. This project not only sharpened my technical skills in circuitry and microcontroller programming but also reinforced the importance of early task allocation and continuous testing in the engineering design cycle.</p>
+<img src="{{ base_path}}/images/gnatt.png">
+<ul>
+  <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/05_IronVoltMobility_MS1memo.pdf">Milestone 1 Memo</a></li>
+  <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/milestone1_presentation.pdf">Milestone 1 Presentation</a></li>
+  <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/MS3_presentation.pdf">Milestone 3 Presentation</a></li>
+  <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/professional_and_societal_impacts.pdf">Professional and Societal Impacts</a></li>
+  <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/FINAL_REPORT.docx.pdf">Final Report</a></li>
+</ul>
