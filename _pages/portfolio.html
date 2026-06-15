@@ -9,6 +9,7 @@ sidebar:
       - [Spring 2024 Electric Circuits](#spring-2024-electric-circuits)
       - [Fall 2024 Intro to Engineering Design](#fall-2024-intro-to-engineering-design)
       - [Fall 2025 Multidisciplinary Capstone: Aircraft Robotic Assembly](#fall-2025-multidisciplinary-capstone-aircraft-robotic-assembly)
+      - [Spring 2026 Software Design & Documentation](#spring-2026-software-design-documentation)
 ---
 
 {% include base_path %}
@@ -197,3 +198,34 @@ sidebar:
   <li><a href="{{ base_path }}/files/fall-2025-multidisciplinary-capstone-aircraft-robotic-assembly/Capstone_Final_Design_Report.pdf">Capstone Final Design Report</a></li>
 </ul>
 
+<h2 id="spring-2026-software-design-documentation">Spring 2026 Software Design &amp; Documentation</h2>
+<h3 id="grocery-finder">Grocery Finder</h3>
+<p>Team: Vibe Coders</p>
+<p>Co-authors: Alan Lee, Qizheng Sui, Sebastian Grammas</p>
+<p>GitHub: <a href="https://github.com/Alan-Lee7/SDD_Grocery_Pathfinding">SDD_Grocery_Pathfinding</a></p>
+<p>Grocery Finder is a full-stack grocery pathfinding application that transforms a shopping list into an optimized store route. The app supports store selection, grocery item matching, aisle-based route planning, carts, coupons, price-aware shopping decisions, and user preferences such as store-brand and accessibility-aware planning.</p>
+<hr>
+<h3>Agile Scrum Process</h3>
+<p>The project was developed through an agile Scrum framework, with work organized into sprint increments rather than a single final build. Each sprint emphasized planning, implementation, review, and adjustment, so the team could respond to feedback while keeping a usable product increment moving forward.</p>
+<ul>
+  <li><strong>Sprint planning:</strong> The team broke the product into scoped goals such as authentication, store selection, item search, route optimization, coupon integration, and release packaging.</li>
+  <li><strong>Product backlog refinement:</strong> Features were prioritized around user value, implementation risk, and dependencies between frontend, backend, database, and documentation work.</li>
+  <li><strong>Iterative releases:</strong> Interim, beta, and final release deliverables documented the application's growth from core grocery-list routing into a more complete shopping assistant.</li>
+  <li><strong>Sprint review and documentation:</strong> Sprint decks and release deliverables captured progress, blockers, design decisions, testing evidence, and next steps for the following iteration.</li>
+  <li><strong>Team coordination:</strong> The Scrum cadence helped the team divide work across UI development, Flask API routes, database models, optimization services, and formal SD&amp;D documentation.</li>
+</ul>
+<hr>
+<h3>Technical Implementation</h3>
+<p>The frontend was built as a React and Vite application with step-based user flows for account access, store selection, grocery list entry, and optimized route review. The backend uses Flask with SQLAlchemy models for users, stores, grocery items, carts, prices, coupons, and store availability.</p>
+<p>The route optimization system uses a Factory Method structure to select matching and planning strategies. Product matchers handle default matching, store-brand preference, budget-aware behavior, and coupon-aware behavior, while aisle planners support default and accessibility-friendly route planning. This structure kept the code extensible as Scrum iterations added new user-facing options.</p>
+<hr>
+<h3>Release Outcomes</h3>
+<p>By the final release, the project connected the major pieces expected of a Software Design &amp; Documentation course project: a usable full-stack application, a documented architecture, iterative Scrum artifacts, release deliverables, and presentation material. The result was not just a prototype, but a documented software product that reflected multiple cycles of planning, implementation, testing, and review.</p>
+<ul>
+  <li><a href="{{ base_path }}/files/spring-2026-software-design-documentation/Grocery_Finder_Sprint_1.pdf">Grocery Finder Sprint 1</a></li>
+  <li><a href="{{ base_path }}/files/spring-2026-software-design-documentation/Grocery_Finder_Sprint_4.pdf">Grocery Finder Sprint 4</a></li>
+  <li><a href="{{ base_path }}/files/spring-2026-software-design-documentation/Interim_Release_Deliverables.pdf">Interim Release Deliverables</a></li>
+  <li><a href="{{ base_path }}/files/spring-2026-software-design-documentation/Beta_Release.pdf">Beta Release</a></li>
+  <li><a href="{{ base_path }}/files/spring-2026-software-design-documentation/Final_Release_Deliverables.pdf">Final Release Deliverables</a></li>
+  <li><a href="{{ base_path }}/files/spring-2026-software-design-documentation/Grocery_Finder_Presentation.pdf">Grocery Finder Presentation</a></li>
+</ul>
