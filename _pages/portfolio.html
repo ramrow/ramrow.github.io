@@ -18,11 +18,9 @@ sidebar:
 <p>The team decided that for the three labs done throughout this course, The first and third will be omega lab and the second will be an alpha lab due to the estimated difficulty of our designe project</p>
 <p>Co-authors: Cooper Filkins, Chloe Zhou</p>
 <h3 id="alpha-lab">Alpha Lab</h3>
-
 <h3>Document Overview</h3>
     <p>The document is a comprehensive laboratory report detailing experiments and mathematical analyses of fundamental electrical networks, specifically focusing on RC (Resistor-Capacitor) and RLC (Resistor-Inductor-Capacitor) circuits. The primary objective of the document is to validate theoretical circuit behaviors by triangulating data from three sources: hand-written analytical equations, LTspice software simulations, and physical hardware measurements captured using an ADALM1000 Oscilloscope.</p>
 <hr>
-
 <h3>Part A &amp; B: RC Circuits and Time Constants</h3>
 <p>In the first two sections (Part A and Part B), the report successfully demonstrates the principles of RC time constants (<em>&tau; = RC</em>).</p>
 <ul>
@@ -30,9 +28,7 @@ sidebar:
   <li>The document compares the theoretical time constants to the measured oscilloscope data, achieving results well within acceptable error margins (e.g., 5.6% and 3.37%).</li>
   <li>Furthermore, we successfully utilizes Thevenin's theorem to simplify a multi-resistor network into an equivalent circuit, mathematically predicting and physically verifying that the capacitor's steady-state voltage approaches 1/3 V.</li>
 </ul>
-
 <img src="{{ base_path}}/images/circuit_alpha.png">
-
 <hr>
 <h3>Part C: RLC Circuit Dynamics</h3>
   <p>The most extensive accomplishment of the report (Part C) is its deep exploration of a series RLC circuit.</p>
@@ -41,7 +37,6 @@ sidebar:
     <li>Through rigorous time-domain calculations and s-domain (Laplace transform) analysis, the team derives the attenuation constant (<em>&alpha;</em>) and resonant frequency (<em>&omega;<sub>0</sub></em>) to establish the required resistance thresholds for each damping condition.</li>
     <li>The report pairs these complex mathematical models with accurate LTspice simulations and physical oscilloscope traces, successfully validating the predicted oscillatory and exponential decay behaviors of both the capacitor's voltage and the inductor's current.</li>
   </ul>
-
 <hr>
 <h3>Part D: Timing and Oscillator Configurations</h3>
   <p>Finally, the document concludes (Part D) by comparing different timing and oscillator configurations, including the basic RC Timer, the 555 Timer IC, and the RC Phase Shift Oscillator.</p>
@@ -49,16 +44,13 @@ sidebar:
     <li>The team successfully simulates an RC Phase Shift Oscillator, proving its ability to reach a steady state and generate a continuous sinusoidal output frequency of approximately 31.5 kHz.</li>
     <li>The report highlights the practical engineering applications of such an oscillator, noting its utility in audio synthesizers, testing circuits, and GPS modules due to its reliable frequency generation.</li>
   </ul>
-
 <ul>
   <li><a href="{{ base_path }}/files/spring-2024-electric-circuits/alpha_lab_2_Proof_of_Concepts.pdf">Alpha Lab 2 Proof of Concepts</a></li>
 </ul>
 
 <h3 id="omega-lab">Omega Lab</h3>
 <p>The Omega Lab project represents a complete, dual-powered AM radio receiver built from the ground up. The system architecture includes a custom diode-based power selection circuit designed to seamlessly switch between solar and wall power. The signal processing pipeline features a second-order LC bandpass filter tuned to a local 810 kHz station, followed by an RC envelope detector for AM demodulation. Finally, the audio signal is boosted through a two-stage amplification process, utilizing a non-inverting operational amplifier for voltage gain and a highly efficient Class B push-pull transistor setup to provide the necessary current to drive an 8-ohm speaker.</p>
-
 <hr>
-
 <h3>Power Management and Source Selection</h3>
 <p>A unique feature of this design is its dual-power capability, intending to use a solar panel as a primary source and wall power as a backup. To manage this, the team designed a voltage comparator circuit using two diodes connected in parallel with the respective power supplies.</p>
 <ul>
@@ -67,24 +59,19 @@ sidebar:
     <li>Conversely, if the solar voltage exceeds the wall voltage, the solar diode allows current to flow while the wall diode blocks it.</li>
     <li>If both voltages are equal, both diodes are forward-biased, allowing current from both sources.</li>
 </ul>
-
 <hr>
-
 <h3>Signal Reception and Tuning (Second-Order LC Filter)</h3>
 <p>To pick up local AM radio broadcasts, the team attempted to use a long wire antenna. Because air transmits many different electromagnetic frequencies simultaneously, we engineered a second-order LC (Inductor-Capacitor) bandpass filter to tune into a specific station.</p>
 <ul>
     <li>We targeted the frequency 810 kHz to pick up the local WGY radio station based in Schenectady, New York.</li>
     <li>The transfer function and resonant center frequency for our bandpass filter were calculated using the formal equations:
         $$H(s) = \frac{\frac{s}{RC}}{s^2 + \frac{1}{RC}s + \frac{1}{LC}}$$
-        $$f_c = \frac{1}{2\pi \sqrt{LC}}$$ [cite: 3133]
+        $$f_c = \frac{1}{2\pi \sqrt{LC}}$$ 
     </li>
     <li>Ideally, this circuit required a variable tuning capacitor of 19.3nF paired with a 2&mu;H inductor. Because a variable capacitor was unavailable, we used a fixed 12nF capacitor, which shifted our actual center frequency to approximately 1.03 MHz.</li>
 </ul>
-
 <img src="{{ base_path}}/images/omega3.png">
-
 <hr>
-
 <h3>Demodulation (First-Order RC Filter)</h3>
 <p>Once the specific high-frequency AM signal is isolated, the audio information must be extracted from the high-frequency carrier wave.</p>
 <ul>
@@ -92,34 +79,24 @@ sidebar:
     <li>Next, the signal passes through a first-order RC (Resistor-Capacitor) low-pass filter, acting as an envelope detector.</li>
     <li>Because AM stations broadcast audio up to 5 kHz, the team calculated component values (a 330-ohm resistor and a 0.1&mu;F capacitor) to create a cutoff frequency of 4823 Hz. This successfully rolls off the 810 kHz carrier frequency at a rate of -20 dB/decade, leaving only the audible message behind.</li>
 </ul>
-
 <hr>
-
 <h3>Amplification Stage</h3>
-<p>The extracted audio signal is too weak to directly drive a physical speaker, requiring a two-stage amplification process[cite: 2994, 2997].</p>
+<p>The extracted audio signal is too weak to directly drive a physical speaker, requiring a two-stage amplification process.</p>
 <ul>
     <li><strong>Voltage Amplification:</strong> The team used a non-inverting operational amplifier with a 47k-ohm feedback resistor and a 1k-ohm ground resistor to provide significant voltage gain. To prevent the audio signal from clipping, we implemented a voltage divider to DC-bias the signal to 4.5V (exactly half of our 9V supply rail). AC coupling capacitors (22&mu;F and 4.7&mu;F) were also added to remove unwanted DC interference.</li>
     <li><strong>Current Amplification:</strong> Because an op-amp cannot provide the physical current required to move a speaker cone, the team cascaded the op-amp into a Class B push-pull amplifier. This configuration utilizes paired NPN and PNP transistors. Each transistor only conducts for half of the input wave cycle, resulting in high power efficiency and low heat generation.</li>
 </ul>
-
-
 <img src="{{ base_path}}/images/omega1.png">
 <img src="{{ base_path}}/images/omega2.png">
-
-
 <hr>
-
 <h3>Challenges, Limitations, and Outcomes</h3>
 <p>While the mathematical models and software simulations (via LTspice) were highly successful, the physical hardware implementation faced a few engineering realities.</p>
 <ul>
     <li>The primary failure point was the antenna. A standard AM radio wave is massive, meaning a proper quarter-wavelength wire antenna would need to be roughly 370 meters long. Our 3-meter wire, operated inside a concrete and metal building, completely failed to pick up the WGY signal.</li>
     <li>To prove the circuit actually worked, the team bypassed the antenna and injected test sinusoidal waves directly into the amplifier stage, successfully producing an amplified audio tone through the 1W, 8-ohm speaker.</li>
     <li>We also successfully proved the radio receiver logic in simulation by mathematically multiplying a 1 kHz audio signal with an 810 kHz carrier signal and running it through our virtual filters.</li>
-    <li>In our conclusion, we noted that future iterations could be improved by using a ferrite rod antenna to concentrate magnetic fields [cite: 3351], and by upgrading the Class B current amplifier to a Class AB amplifier (using diodes or a Vbe multiplier) to eliminate crossover distortion at the zero-crossing point.</li>
+    <li>In our conclusion, we noted that future iterations could be improved by using a ferrite rod antenna to concentrate magnetic fields, and by upgrading the Class B current amplifier to a Class AB amplifier (using diodes or a Vbe multiplier) to eliminate crossover distortion at the zero-crossing point.</li>
 </ul>
-
-
-
 <ul>
   <li><a href="{{ base_path }}/files/spring-2024-electric-circuits/Omega_Lab_1_Project_Manual.pdf">Omega Lab 1 Project Manual</a></li>
   <li><a href="{{ base_path }}/files/spring-2024-electric-circuits/Omega_Lab_1_Proof_of_Concepts.pdf">Omega Lab 1 Proof of Concepts</a></li>
@@ -131,6 +108,26 @@ sidebar:
 <h3 id="mini-project-line-follower">Mini Project: Line Follower</h3>
 <p>Co-authors: Merak Dec, Curtis Sung</p>
 <p>The Line Follower mini project focused on designing, building, and testing an autonomous vehicle capable of detecting and following a path. The project combined mechanical design, sensor integration, circuit implementation, and iterative testing to tune the robot's response to line position changes. The final system used feedback from line-detection sensors to guide motor control decisions, demonstrating a complete engineering design cycle from requirements and prototyping through performance evaluation.</p>
+<img src="{{ base_path}}/images/line_follower.png">
+<hr>
+<h3>Summary of the project</h3>
+<p>We set out to design and build a low-cost, reliable line-following robot that could track a 3/4" black line on white background, be simple to assemble (≤10 minutes for an amateur), use inexpensive parts (≤\$30), and serve as an educational platform.</p>
+<hr>
+<h3>Concept development and benchmarking</h3>
+<p>We researched existing kits and compared sensing and motor options (photoresistors, IR sensors, cameras; DIY H‑bridge vs L298N motor driver). We created a concept selection matrix with criteria like cost, implementation difficulty, efficiency, creativity, and safety, and used it to choose components that balanced affordability and ease of use.</p>
+<p>We decided on an Arduino microcontroller for control, an L298N motor driver for the motor unit, and two ground-facing IR sensors for sensing. The design prioritized simplicity and educational accessibility, with the Arduino and breadboard mounted on the chassis, motors driven by the L298N, and a single 9V battery powering the system.</p>
+<hr>
+<h3>Implementation Details</h3>
+<p>We placed the two IR sensors 13 cm apart, mounted the Arduino on the breadboard, positioned the L298N at the rear, and connected motors and battery to the driver. The IR sensors’ result LED signaled white (LED on) vs black (LED off). Arduino code read sensor states and issued motor commands (forward, left, right, or stop/black) via the L298N using PWM for speed control and H‑bridge logic for direction.</p>
+<p>We sketched and assembled an initial iteration with slanted IR sensors. Early trials showed poor ground detection, causing the robot to veer off track. We iterated by repositioning the IR sensors to point straight down and lower to the ground. This placement change substantially improved line detection and overall performance.</p>
+<hr>
+<h3>Testing Strategy</h3>
+<p>We tested progressively: individual components (IR sensors, power/motors), then IR sensors with code, and finally the fully assembled robot. Sensor tests used white paper and three black samples (printed, tape, marker). Motor tests verified each motor responded correctly to motor driver inputs. Code testing confirmed correct terminal output for all four sensor-state combinations.</p>
+<hr>
+<h3>Results</h3>
+<p>The robot achieved consistent success on straight lines, curved turns, 90° turns, squiggles, and a hexagon when turn radii were ≥13 cm. Success rates were 100% on those tracks. The infinity-symbol course, with tighter radii and an intersection, produced inconsistent results for repeated trials. Completion time was not measured; accuracy was prioritized over speed.</p>
+<p>We learned the importance of sensor placement for reliable detection, the value of iterative testing from components to full system, and that design trade-offs (cost vs performance vs complexity) matter for educational builds. Non-technical lessons included better team communication practices and starting earlier to allow more testing and refinement.</p>
+<p>We delivered a low-cost, easy-to-assemble, educational line-follower that met the core objectives for accuracy and simplicity. The project highlighted practical constraints (sensor range, tight-turn handling) and provided a platform that students can rebuild, modify, and learn from.</p>
 <ul>
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/IED-PD1_Mini-Project_Final_Technical_Memo.pdf">Mini Project Final Technical Memo</a></li>
   <li><a href="{{ base_path }}/files/fall-2024-intro-to-engineering-design/Line_Follower_05_Dec_Sung_Xu.pdf">Mini Project Presentation</a></li>
