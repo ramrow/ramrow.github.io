@@ -84,6 +84,8 @@ author:
 
 # Research Category - The following the list of research categories and their headings
 research_category:
+  research_projects:
+    title: 'Research Projects'
   books:
     title: 'Books'
   manuscripts:
