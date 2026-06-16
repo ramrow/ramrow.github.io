@@ -16,6 +16,11 @@ redirect_from:
 
 {% include base_path %}
 
+<div class="notice--info" markdown="1">
+  <strong>Download my resume:</strong>
+  <a class="btn btn--large" href="{{ base_path }}/files/PeijingXu_Resume.pdf" download>Download Resume PDF</a>
+</div>
+
 ## Education
 * M.S. in Eletrical Computer Engineering, Carnegie Mellon University, Expected 2028
 * B.S. in Computer Systems Engineering & Computer Science, Rensselaer Polytechnic Institute, 2026
