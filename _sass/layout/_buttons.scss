@@ -20,10 +20,11 @@
   background-color: var(--global-base-color);
   border: 0 !important;
   border-radius: $border-radius;
+  box-shadow: 0 4px 14px rgba(11, 42, 74, 0.18);
   cursor: pointer;
 
   &:hover {
-    background-color: mix(white, #000, 20%);
+    background-color: var(--global-link-color-hover);
   }
 
   .icon {

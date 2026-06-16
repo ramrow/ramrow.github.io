@@ -175,7 +175,7 @@
 .greedy-nav {
   position: relative;
   min-width: 250px;
-  background: var(--global-bg-color);
+  background: transparent;
 
   a {
     display: block;
@@ -196,8 +196,8 @@
     padding: 0 0.5rem;
     border: 0;
     outline: none;
-    background-color: var(--global-bg-color);
-    color: var(--global-text-color);
+    background-color: var(--global-masthead-bg-color);
+    color: var(--global-masthead-link-color);
     cursor: pointer;
     z-index: 100;
   }
@@ -243,7 +243,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: var(--global-border-color);
+        background: rgba(255, 255, 255, 0.7);
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -268,8 +268,8 @@
     padding: 5px;
     border: 1px solid var(--global-border-color);
     border-radius: $border-radius;
-    background: var(--global-bg-color);
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    background: var(--global-surface-color);
+    box-shadow: 0 14px 34px rgba(#000, 0.18);
 
     a {
       margin: 0;
@@ -278,7 +278,7 @@
 
       &:hover {
         color: var(--global-masthead-link-color-hover);
-        background: var(--global-border-color);
+        background: var(--global-thead-color);
       }
     }
 
@@ -303,7 +303,7 @@
       width: 0;
       border-style: solid;
       border-width: 0 10px 10px;
-      border-color: var(--global-bg-color) transparent;
+      border-color: var(--global-surface-color) transparent;
       display: block;
       z-index: 1;
     }
@@ -337,6 +337,7 @@
     color: inherit;
 
     &:hover {
+      color: var(--global-link-color);
       text-decoration: underline;
     }
   }
@@ -384,11 +385,12 @@
   font-family: $sans-serif-narrow;
   color: var(--global-text-color-light);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  background-color: #fff;
+  letter-spacing: 0.04em;
+  background-color: var(--global-toc-bg-color);
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  overflow: hidden;
 
   .nav__title {
     color: #fff;
@@ -408,7 +410,7 @@
 
   a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.45rem 1rem;
     color: var(--global-code-text-color);
     font-size: $type-size-7;
     font-weight: bold;
@@ -417,8 +419,8 @@
     text-decoration-line: none !important;
 
     &:hover {
-      color: #000;
-      background: var(--global-link-color-hover);
+      color: var(--global-link-color-hover);
+      background: var(--global-thead-color);
     }
   }
 

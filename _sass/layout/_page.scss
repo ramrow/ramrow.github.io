@@ -5,7 +5,7 @@
 #main {
   @include container;
   @include clearfix;
-  margin-top: 2em;
+  margin-top: 2.5em;
   padding-left: 1em;
   padding-right: 1em;
   animation: intro 0.3s both;
@@ -25,6 +25,11 @@
 
   .page__inner-wrap {
     @include full();
+    background: var(--global-surface-color);
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 1.5rem;
 
     .page__content,
     .page__meta,
@@ -37,6 +42,7 @@
 .page__title {
   margin-top: 0;
   line-height: 1;
+  color: var(--global-base-color);
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -52,6 +58,7 @@
 
   h2 {
     padding-bottom: 0.5em;
+    color: var(--global-base-color);
     border-bottom: 1px solid var(--global-border-color);
   }
 
@@ -73,6 +80,7 @@
   }
 
   a {
+    color: var(--global-link-color);
     text-decoration: underline;
 
     &:hover {
