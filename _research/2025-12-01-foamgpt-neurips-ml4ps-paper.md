@@ -5,6 +5,7 @@ permalink: /research/foamgpt-neurips-ml4ps-paper/
 excerpt: >
   This paper presents FoamGPT, a fine-tuned large language model for agentic automation of CFD simulations with OpenFOAM. It was published in the NeurIPS 2025 Machine Learning and the Physical Sciences Workshop.
 date: 2025-12-01
+date_label: Published
 venue: 'NeurIPS 2025 Machine Learning and the Physical Sciences Workshop'
 link: 'https://neurips.cc/virtual/2025/loc/san-diego/123076'
 paperurl: 'https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_271.pdf'
