@@ -6,6 +6,7 @@ author_profile: false
 sidebar:
   - title: "Contents"
     text: |
+      - [Download Resume](#download-resume)
       - [Education](#education)
       - [Work experience](#work-experience)
       - [Skills](#skills)
@@ -16,9 +17,9 @@ redirect_from:
 
 {% include base_path %}
 
-<div class="notice--info" markdown="1">
-  <strong>Download my resume:</strong>
-  <a class="btn btn--large" href="{{ base_path }}/files/PeijingXu_Resume.pdf" download>Download Resume PDF</a>
+<div id="download-resume" class="cv-download-panel">
+  <p class="cv-download-panel__label">Resume PDF</p>
+  <a class="btn btn--large cv-download-panel__button" href="{{ '/files/PeijingXu_Resume.pdf' | relative_url }}" download>Download Resume PDF</a>
 </div>
 
 ## Education

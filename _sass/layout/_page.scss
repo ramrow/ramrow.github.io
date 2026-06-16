@@ -115,6 +115,32 @@
   }
 }
 
+.cv-download-panel {
+  margin: 0 0 1.75rem;
+  padding: 1.25rem;
+  background: var(--global-base-color);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  color: #fff;
+}
+
+.cv-download-panel__label {
+  margin: 0 0 0.75rem !important;
+  font-size: $type-size-5 !important;
+  font-weight: 700;
+}
+
+.cv-download-panel__button {
+  background: #fff !important;
+  color: var(--global-base-color) !important;
+  box-shadow: none;
+
+  &:hover {
+    background: var(--global-thead-color) !important;
+    color: var(--global-link-color-hover) !important;
+  }
+}
+
 .page__hero {
   position: relative;
   margin-bottom: 2em;
