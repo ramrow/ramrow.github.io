@@ -2,13 +2,22 @@
 title: "Foam-GPT: Fine-Tuning LLMs for OpenFOAM Automation"
 category: research_projects
 permalink: /research/foam-gpt-finetuning-openfoam/
-excerpt: 'My second research project, beginning in Summer 2025 and continuing to the present, focuses on fine-tuning, evaluating, deploying, and improving LLMs that generate OpenFOAM case files for CFD simulation workflows.'
+excerpt: >
+  My second research project, beginning in Summer 2025 and continuing to the present, focuses on fine-tuning, evaluating, deploying, and improving LLMs that generate OpenFOAM case files for CFD simulation workflows.
+  Repositories:
+  [Finetune_research_RPI2025](https://github.com/ramrow/Finetune_research_RPI2025),
+  [foam_standards](https://github.com/ramrow/foam_standards),
+  [failure_analysis](https://github.com/ramrow/failure_analysis),
+  [controlled_dataset_branching](https://github.com/ramrow/controlled_dataset_branching),
+  [controlled_dataset_augmentation](https://github.com/ramrow/controlled_dataset_augmentation),
+  and [slurm_job_manager](https://github.com/ramrow/slurm_job_manager).
 date: 2025-06-01
 venue: 'Summer 2025-Present Undergraduate Research, Rensselaer Polytechnic Institute'
-link: 'https://github.com/ramrow/Finetune_research_RPI2025'
 ---
 
 This is my second research project, beginning in Summer 2025 and continuing to the present. The research focuses on Foam-GPT, an effort to fine-tune large language models so they can generate OpenFOAM input files for computational fluid dynamics workflows. The larger goal is to make an AI agent that can help automate CFD simulation setup by writing valid OpenFOAM files from natural-language requirements.
+
+This work led to a paper, [FoamGPT: Fine-Tuning Large Language Model for Agentic Automation of CFD Simulations with OpenFOAM](https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_271.pdf), published in the [NeurIPS 2025 Machine Learning and the Physical Sciences Workshop](https://neurips.cc/virtual/2025/loc/san-diego/123076). The paper presents FoamGPT as a specialized input-writer model for OpenFOAM automation, built around a curated dataset from OpenFOAM tutorial cases and evaluated inside an agentic simulation workflow.
 
 The project began with [Finetune_research_RPI2025](https://github.com/ramrow/Finetune_research_RPI2025), where I worked with supervised fine-tuning workflows for models such as Llama, Qwen, Mistral, and Granite. I learned and compared multiple fine-tuning toolchains, including LLaMA-Factory, TRL, and Unsloth. This work also introduced me to LoRA, PEFT, quantization, dataset formatting, training configuration, and the tradeoffs between training speed, loss, accuracy, and hardware limits.
 
@@ -34,3 +43,8 @@ Project repositories:
 - [controlled_dataset_branching](https://github.com/ramrow/controlled_dataset_branching)
 - [controlled_dataset_augmentation](https://github.com/ramrow/controlled_dataset_augmentation)
 - [slurm_job_manager](https://github.com/ramrow/slurm_job_manager)
+
+Paper:
+
+- [FoamGPT: Fine-Tuning Large Language Model for Agentic Automation of CFD Simulations with OpenFOAM](https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_271.pdf)
+- [NeurIPS 2025 virtual page](https://neurips.cc/virtual/2025/loc/san-diego/123076)
