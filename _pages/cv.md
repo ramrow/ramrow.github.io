@@ -40,7 +40,7 @@ redirect_from:
   * Converts the trajectories into World Frame, then calculate joint angels of robot arm with inverse kinematics, the portrait is drawn with force control and trapezoidal velocity profile at 4 milliseconds per point.
 
 * Research Assistant
-  * Foam-GPT, May 2025 - Present
+  * Foam-GPT, May 2025 - Dec 2026
   * Worked under Assistant Professor Shaowu Pan
   * [GitHub repository](https://github.com/ramrow/Finetune_research_RPI2025)
   * Optimized LLMs like llama, Qwen3, Mistral, and gpt-oss through SFT so they would generate OpenFOAM files as the input writer AI for an open-sourced version of Foam-Agent, a multi-agent framework designed to automate complex CFD simulations.
@@ -49,9 +49,16 @@ redirect_from:
   * [Paper link](https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_271.pdf)
 
 * Undergraduate Student Mentor, In-person
-  * Rensselaer Polytechnic Institute, Aug 2025 - Present
+  * Rensselaer Polytechnic Institute, Aug 2025 - May 2026
   * Student assistant for Principles of Software, assisted in mentoring around 30 students during the recitation time block. Graded students work from recitation quizzes to homework assignments.
   
+* Research and Development Engineer Intern, In-person
+  * AMD, Jul 2026 - Jan 2027
+  * Used GitHub issues as the frontend within a LangGraph-orchestrated flow so that engineers could trigger simulations by simply opening an issue describing what they want, removing tedious manual, error-prone launch setup and made kicking off a run effortless and consistent
+  * Modeled the workflow as a stateful LangGraph of agent nodes with conditional branching, because the multi-step simulation process needed reliable state tracking, and this replaced fragile hand-managed steps with an automated pipeline that is repeatable and easy to reason about
+  * Trained Gaussian Processes that map the probability distribution of multiple knobs that exists within the different high speed link simulation projects, final product estimates the bit error rate as well as if the link locks or not from human inputs to avoid expensive simulations ranging in the tens of thousands
+
+
 ## Skills
 * Programming and software development
   * Python
@@ -80,6 +87,7 @@ redirect_from:
   * Ollama
   * Ollama Models
 * AI models and agent frameworks
+  * Codex
   * GPT
   * Claude
   * Llama
